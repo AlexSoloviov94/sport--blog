@@ -1,8 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import styled from "@emotion/styled";
 import Tennsi1 from "../../assets/images/Tennis1.jpg";
@@ -23,7 +24,7 @@ const StyledSlide = styled(SwiperSlide)`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 500px; // Вы можете изменить высоту по своему усмотрению
+    height: 500px;
     width: 100%;
 `;
 
@@ -33,13 +34,17 @@ const Slider: React.FC = () => {
             pagination={{
                 dynamicBullets: true,
             }}
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay, Navigation]}
             className="mySwiper"
             autoplay={{
                 delay: 4000,
                 disableOnInteraction: false,
             }}
             loop={true}
+            navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }}
         >
             <StyledSlide
                 style={{ backgroundImage: `url(${Tennsi1})` }}
@@ -66,6 +71,8 @@ const Slider: React.FC = () => {
                 style={{ backgroundImage: `url(${Football3})` }}
             ></StyledSlide>
             <StyledSlide style={{ backgroundImage: `url(${Basketball3})` }} />
+            <div className="swiper-button-next"></div>
+            <div className="swiper-button-prev"></div>
         </Swiper>
     );
 };

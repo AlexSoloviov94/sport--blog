@@ -6,6 +6,7 @@ import { RootState } from "../../store/reducers";
 import ArticleList from "../../components/ArticleList/ArticleList";
 import { Typography } from "@mui/material";
 import styled from "@emotion/styled";
+import "./Category.scss";
 
 const CategoryTitle = styled(Typography)`
     margin-bottom: 16px;
@@ -20,8 +21,10 @@ const Category: React.FC = () => {
     );
 
     return (
-        <div>
-            <CategoryTitle variant="h4">{categoryName}</CategoryTitle>
+        <div className="Category">
+            <CategoryTitle variant="h4" className="CategoryTitle">
+                {categoryName}
+            </CategoryTitle>
             <ArticleList articles={filteredArticles} />
         </div>
     );

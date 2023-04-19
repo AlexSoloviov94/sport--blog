@@ -4,11 +4,12 @@ import CommentSection from "../../components/CommentSection/CommentSection";
 import { Paper, Typography, IconButton } from "@mui/material";
 import { FavoriteBorder, Favorite } from "@mui/icons-material";
 import styled from "@emotion/styled";
-import Header from "../../components/Header/Header";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/reducers";
 import { Article as ArticleType } from "../../store/reducers/articles/articlesSlice";
 import { useLikedArticles } from "../../contexts/LikedArticlesContext/LikedArticlesContext";
+import "./Article.scss";
 
 const ArticleContent = styled(Paper)`
     padding: 16px;
@@ -46,14 +47,23 @@ const Article: React.FC = () => {
 
     return (
         <div>
-            <ArticleContent>
-                <Typography variant="h3">{article.category}</Typography>
-                <Typography variant="h4">{article.title}</Typography>
+            <ArticleContent className="ArticleContent">
+                <div className="title-container">
+                    <Typography variant="h3" className="title">
+                        {article.category}
+                    </Typography>
+                    <Typography variant="h4" className="title">
+                        {article.title}
+                    </Typography>
+                </div>
 
-                <Typography variant="body1">{article.description}</Typography>
+                <Typography variant="body1" className="description">
+                    {article.description}
+                </Typography>
                 <IconButton
                     onClick={() => toggleLike(article)}
                     color={isLiked ? "primary" : "default"}
+                    className="IconButton"
                 >
                     {isLiked ? <Favorite /> : <FavoriteBorder />}
                 </IconButton>

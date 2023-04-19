@@ -1,0 +1,52 @@
+// LikedArticles.scss
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$font-family: "Roboto", sans-serif;
+$primary-color: #3f51b5;
+$secondary-color: #f50057;
+$transition-time: 0.3s;
+
+body {
+    font-family: $font-family;
+}
+
+.liked-articles-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .liked-articles-title {
+        margin-bottom: 16px;
+    }
+
+    .article-list-container {
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
+// Анимация для элементов списка статей
+.article-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity $transition-time ease, transform $transition-time ease;
+}
+
+.article-card:nth-child(odd) {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.article-card:nth-child(even) {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

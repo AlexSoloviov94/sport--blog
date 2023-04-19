@@ -21,6 +21,15 @@ const ArticleListContainer = styled.div`
 
 const ArticleCard = styled(Card)`
     margin-bottom: 16px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+    }
 `;
 
 interface ArticleListProps {
@@ -49,7 +58,6 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                         <CardContent>
                             <Link to={`/articles/${article.id}`}>
                                 {" "}
-                                {/* Исправленный путь */}
                                 <Typography variant="h5">
                                     {article.title}
                                 </Typography>

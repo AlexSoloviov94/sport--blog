@@ -23,30 +23,42 @@ const Header: React.FC = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
+            <AppBar position="static" className="app-bar">
+                <Toolbar className="toolbar">
                     <Typography
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1 }}
+                        className="title"
                     >
                         Sport Blog
                     </Typography>
-                    <Button component={RouterLink} to="/" color="inherit">
+                    <Button
+                        component={RouterLink}
+                        to="/"
+                        color="inherit"
+                        className="button"
+                    >
                         Home
                     </Button>
-                    <Button color="inherit" onClick={handleClick}>
+                    <Button
+                        color="inherit"
+                        onClick={handleClick}
+                        className="button"
+                    >
                         Categories
                     </Button>
                     <Menu
                         anchorEl={anchorEl}
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
+                        className="menu"
                     >
                         <MenuItem
                             component={RouterLink}
                             to="/categories/Football"
                             onClick={handleClose}
+                            className="menu__item"
                         >
                             Football
                         </MenuItem>
@@ -54,6 +66,7 @@ const Header: React.FC = () => {
                             component={RouterLink}
                             to="/categories/Basketball"
                             onClick={handleClose}
+                            className="menu__item"
                         >
                             Basketball
                         </MenuItem>
@@ -61,6 +74,7 @@ const Header: React.FC = () => {
                             component={RouterLink}
                             to="/categories/Tennis"
                             onClick={handleClose}
+                            className="menu__item"
                         >
                             Tennis
                         </MenuItem>
@@ -69,6 +83,7 @@ const Header: React.FC = () => {
                         component={RouterLink}
                         to="/liked-articles"
                         color="inherit"
+                        className="button"
                     >
                         Liked Articles
                     </Button>

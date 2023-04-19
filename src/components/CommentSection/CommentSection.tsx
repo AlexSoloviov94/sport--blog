@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, TextField, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import "./CommentSection.scss";
+
 const CommentContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,11 +34,11 @@ const CommentSection: React.FC = () => {
     };
 
     return (
-        <CommentContainer>
+        <CommentContainer className="comment-container">
             <Typography variant="h6">Comments</Typography>
-            <CommentList>
+            <CommentList className="comment-list">
                 {comments.map((comment, index) => (
-                    <Comment key={index}>
+                    <Comment key={index} className="comment">
                         <Typography variant="body1">{comment}</Typography>
                     </Comment>
                 ))}
@@ -48,8 +49,9 @@ const CommentSection: React.FC = () => {
                 rows={4}
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
+                className="text-field"
             />
-            <Button variant="contained" onClick={addComment}>
+            <Button variant="contained" onClick={addComment} className="button">
                 Add Comment
             </Button>
         </CommentContainer>

@@ -1,0 +1,49 @@
+// Category.scss
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$font-family: "Roboto", sans-serif;
+$primary-color: #3f51b5;
+$secondary-color: #f50057;
+$transition-time: 0.3s;
+
+body {
+    font-family: $font-family;
+}
+
+.CategoryTitle {
+    margin-bottom: 16px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+        transform: scaleX(0);
+        transition: transform $transition-time ease;
+    }
+
+    &:hover {
+        &:after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+// Анимация для элементов списка статей
+.ArticleList {
+    .article-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity $transition-time ease,
+            transform $transition-time ease;
+    }
+
+    .article-card:hover {
+        transform: translateY(0) scale(1.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+}
