@@ -11,7 +11,7 @@ import styled from "@emotion/styled";
 import { FavoriteBorder, Favorite } from "@mui/icons-material";
 import { useLikedArticles } from "../../contexts/LikedArticlesContext/LikedArticlesContext";
 import "./ArticleList.scss";
-import { Article } from "../../store/reducers/articles/articlesSlice"; // Используйте импортированный тип
+import { Article } from "../../store/reducers/articles/articlesSlice";
 
 const ArticleListContainer = styled.div`
     display: grid;
@@ -23,10 +23,8 @@ const ArticleCard = styled(Card)`
     margin-bottom: 16px;
 `;
 
-// Удалите локальное объявление интерфейса Article
-
 interface ArticleListProps {
-    articles: Article[]; // Используйте импортированный тип
+    articles: Article[];
 }
 
 const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
@@ -49,7 +47,9 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                             }
                         />
                         <CardContent>
-                            <Link to={`/article/${article.id}`}>
+                            <Link to={`/articles/${article.id}`}>
+                                {" "}
+                                {/* Исправленный путь */}
                                 <Typography variant="h5">
                                     {article.title}
                                 </Typography>

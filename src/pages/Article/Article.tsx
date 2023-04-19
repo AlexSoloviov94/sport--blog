@@ -18,11 +18,20 @@ const ArticleContent = styled(Paper)`
 const Article: React.FC = () => {
     const { articleId } = useParams<{ articleId?: string }>();
     const articles = useSelector((state: RootState) => state.articles);
-    const article = articles.find(
-        (a: ArticleType) => a.id === (articleId ? parseInt(articleId, 10) : -1)
-    );
 
     const { likedArticles, toggleLike } = useLikedArticles();
+
+    if (!articleId) {
+        return (
+            <div>
+                <Typography variant="h4">Статья не найдена</Typography>
+            </div>
+        );
+    }
+
+    const parsedArticleId = parseInt(articleId, 10);
+    const article = articles.find((a: ArticleType) => a.id === parsedArticleId);
+
     const isLiked = likedArticles.some(
         (likedArticle) => likedArticle.id === article?.id
     );
@@ -40,13 +49,14 @@ const Article: React.FC = () => {
             <ArticleContent>
                 <Typography variant="h3">{article.category}</Typography>
                 <Typography variant="h4">{article.title}</Typography>
+
+                <Typography variant="body1">{article.description}</Typography>
                 <IconButton
                     onClick={() => toggleLike(article)}
                     color={isLiked ? "primary" : "default"}
                 >
                     {isLiked ? <Favorite /> : <FavoriteBorder />}
                 </IconButton>
-                <Typography variant="body1">{article.description}</Typography>
             </ArticleContent>
             <CommentSection />
         </div>

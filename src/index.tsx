@@ -9,11 +9,9 @@ import { LikedArticlesProvider } from "./contexts/LikedArticlesContext/LikedArti
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <BrowserRouter>
-                <LikedArticlesProvider>
-                    <App />
-                </LikedArticlesProvider>
-            </BrowserRouter>
+            <LikedArticlesProvider>
+                <App />
+            </LikedArticlesProvider>
         </React.StrictMode>
     </Provider>,
     document.getElementById("root")

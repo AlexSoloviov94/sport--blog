@@ -9,8 +9,8 @@ import { LikedArticlesProvider } from "./contexts/LikedArticlesContext/LikedArti
 
 const App: React.FC = () => {
     return (
-        <Router>
-            <LikedArticlesProvider>
+        <LikedArticlesProvider>
+            <Router>
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -18,11 +18,11 @@ const App: React.FC = () => {
                         path="/categories/:categoryName"
                         element={<Category />}
                     />
-                    <Route path="/article/:id" element={<Article />} />
+                    <Route path="/articles/:articleId" element={<Article />} />
                     <Route path="/liked-articles" element={<LikedArticles />} />
                 </Routes>
-            </LikedArticlesProvider>
-        </Router>
+            </Router>
+        </LikedArticlesProvider>
     );
 };
 
