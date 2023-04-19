@@ -1,0 +1,17 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    .slider-container {
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 2rem;
+    }
+
+    .article-list-container {
+        width: 100%;
+        max-width: 1200px;
+    }
+}

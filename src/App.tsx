@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Category from "./pages/Category/Category";
+import Article from "./pages/Article/Article";
+import LikedArticles from "./pages/LikedArticles/LikedArticles";
+import { LikedArticlesProvider } from "./contexts/LikedArticlesContext/LikedArticlesContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <LikedArticlesProvider>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route
+                        path="/categories/:categoryName"
+                        element={<Category />}
+                    />
+                    <Route path="/article/:id" element={<Article />} />
+                    <Route path="/liked-articles" element={<LikedArticles />} />
+                </Routes>
+            </LikedArticlesProvider>
+        </Router>
+    );
+};
 
 export default App;
