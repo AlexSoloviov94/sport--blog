@@ -43,12 +43,6 @@ body {
     }
 }
 
-.description {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity $transition-time ease, transform $transition-time ease;
-}
-
 .ArticleContent:hover {
     .description {
         opacity: 1;
