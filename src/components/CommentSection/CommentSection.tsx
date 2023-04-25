@@ -1,28 +1,6 @@
 import React, { useState } from "react";
 import { Button, TextField, Typography } from "@mui/material";
-import styled from "@emotion/styled";
 import "./CommentSection.scss";
-
-const CommentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-`;
-
-const CommentList = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-`;
-
-const Comment = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px;
-`;
 
 const CommentSection: React.FC = () => {
     const [comments, setComments] = useState<string[]>([]);
@@ -34,15 +12,15 @@ const CommentSection: React.FC = () => {
     };
 
     return (
-        <CommentContainer className="comment-container">
+        <div className="comment-container">
             <Typography variant="h6">Comments</Typography>
-            <CommentList className="comment-list">
+            <div className="comment-list">
                 {comments.map((comment, index) => (
-                    <Comment key={index} className="comment">
+                    <div key={index} className="comment">
                         <Typography variant="body1">{comment}</Typography>
-                    </Comment>
+                    </div>
                 ))}
-            </CommentList>
+            </div>
             <TextField
                 label="Your comment"
                 multiline
@@ -54,7 +32,7 @@ const CommentSection: React.FC = () => {
             <Button variant="contained" onClick={addComment} className="button">
                 Add Comment
             </Button>
-        </CommentContainer>
+        </div>
     );
 };
 

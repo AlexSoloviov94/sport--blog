@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IconButton } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
-import styled from "@emotion/styled";
-
-const ButtonContainer = styled.div`
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 100;
-`;
+import "./BackToTopButton.scss";
 
 const BackToTopButton: React.FC = () => {
     const [visible, setVisible] = useState(false);
@@ -32,11 +25,11 @@ const BackToTopButton: React.FC = () => {
     return (
         <>
             {visible && (
-                <ButtonContainer>
+                <div className="buttonContainer">
                     <IconButton onClick={scrollToTop} color="primary">
                         <ArrowUpward />
                     </IconButton>
-                </ButtonContainer>
+                </div>
             )}
         </>
     );

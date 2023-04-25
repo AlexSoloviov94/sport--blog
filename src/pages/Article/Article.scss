@@ -1,4 +1,3 @@
-// Article.scss
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 $font-family: "Roboto", sans-serif;
@@ -10,7 +9,7 @@ body {
     font-family: $font-family;
 }
 
-.ArticleContent {
+.article-content {
     padding: 16px;
     margin-bottom: 16px;
 }
@@ -43,15 +42,14 @@ body {
     }
 }
 
-.ArticleContent:hover {
+.article-content:hover {
     .description {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-// Анимация кнопки
-IconButton {
+.icon-button {
     transition: all $transition-time ease;
 
     &:hover {

@@ -2,13 +2,7 @@ import React from "react";
 import { Article } from "../../store/reducers/articles/articlesSlice";
 import { useLikedArticles } from "../../contexts/LikedArticlesContext/LikedArticlesContext";
 import ArticleCard from "../ArticleCard/ArticleCard";
-import styled from "@emotion/styled";
-
-const ArticleListContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 16px;
-`;
+import "./ArticleList.scss";
 
 interface ArticleListProps {
     articles: Article[];
@@ -18,7 +12,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     const { likedArticles, toggleLike } = useLikedArticles();
 
     return (
-        <ArticleListContainer>
+        <div className="ArticleListContainer">
             {articles.map((article) => {
                 const isLiked = likedArticles.some(
                     (likedArticle) => likedArticle.id === article.id
@@ -34,7 +28,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                     />
                 );
             })}
-        </ArticleListContainer>
+        </div>
     );
 };
 

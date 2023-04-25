@@ -1,16 +1,11 @@
-// src/pages/Category/Category.tsx
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/reducers";
 import ArticleList from "../../components/ArticleList/ArticleList";
 import { Typography } from "@mui/material";
-import styled from "@emotion/styled";
 import "./Category.scss";
-
-const CategoryTitle = styled(Typography)`
-    margin-bottom: 16px;
-`;
+import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 const Category: React.FC = () => {
     const { categoryName } = useParams<{ categoryName: string }>();
@@ -22,10 +17,11 @@ const Category: React.FC = () => {
 
     return (
         <div className="Category">
-            <CategoryTitle variant="h4" className="CategoryTitle">
+            <Typography variant="h4" className="CategoryTitle">
                 {categoryName}
-            </CategoryTitle>
+            </Typography>
             <ArticleList articles={filteredArticles} />
+            <BackToTopButton />
         </div>
     );
 };

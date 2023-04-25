@@ -3,18 +3,12 @@ import { useParams } from "react-router-dom";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import { Paper, Typography, IconButton } from "@mui/material";
 import { FavoriteBorder, Favorite } from "@mui/icons-material";
-import styled from "@emotion/styled";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/reducers";
 import { Article as ArticleType } from "../../store/reducers/articles/articlesSlice";
 import { useLikedArticles } from "../../contexts/LikedArticlesContext/LikedArticlesContext";
 import "./Article.scss";
-
-const ArticleContent = styled(Paper)`
-    padding: 16px;
-    margin-bottom: 16px;
-`;
 
 const Article: React.FC = () => {
     const { articleId } = useParams<{ articleId?: string }>();
@@ -47,7 +41,7 @@ const Article: React.FC = () => {
 
     return (
         <div>
-            <ArticleContent className="ArticleContent">
+            <Paper className="article-content">
                 <div className="title-container">
                     <Typography variant="h3" className="title">
                         {article.category}
@@ -63,11 +57,11 @@ const Article: React.FC = () => {
                 <IconButton
                     onClick={() => toggleLike(article)}
                     color={isLiked ? "primary" : "default"}
-                    className="IconButton"
+                    className="icon-button"
                 >
                     {isLiked ? <Favorite /> : <FavoriteBorder />}
                 </IconButton>
-            </ArticleContent>
+            </Paper>
             <CommentSection />
         </div>
     );

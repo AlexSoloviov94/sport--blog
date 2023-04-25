@@ -42,18 +42,23 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
                     </Link>
                 }
             />
-            <CardContent className="card-content">
+            <CardContent
+                className="card-content"
+                style={{ paddingBottom: "48px" }}
+            >
                 <Link to={`/articles/${article.id}`}>
                     <Typography variant="h5">{article.title}</Typography>
                 </Link>
                 <Typography variant="body2">{truncatedDescription}</Typography>
+            </CardContent>
+            <div className="like-button-container">
                 <IconButton
                     onClick={() => toggleLike(article)}
                     color={isLiked ? "primary" : "default"}
                 >
                     {isLiked ? <Favorite /> : <FavoriteBorder />}
                 </IconButton>
-            </CardContent>
+            </div>
         </Card>
     );
 };

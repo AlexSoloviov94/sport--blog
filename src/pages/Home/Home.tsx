@@ -4,7 +4,7 @@ import { RootState } from "../../store/reducers";
 
 import Slider from "../../components/Slider/Slider";
 import ArticleList from "../../components/ArticleList/ArticleList";
-import "./Home.scss"; // Импортируйте файл стилей
+import "./Home.scss";
 import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 const Home: React.FC = () => {

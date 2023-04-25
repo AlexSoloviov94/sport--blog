@@ -1,5 +1,5 @@
-// src/components/ArticleCard/ArticleCard.scss
 .article-card {
+    position: relative;
     margin-bottom: 16px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -10,26 +10,32 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         transform: translateY(-4px);
     }
+}
 
-    .card-header {
-        a {
-            text-decoration: none;
-            color: inherit;
+.card-header {
+    a {
+        text-decoration: none;
+        color: inherit;
 
-            &:hover {
-                text-decoration: underline;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
+}
 
-    .card-content {
-        a {
-            text-decoration: none;
-            color: inherit;
+.card-content {
+    a {
+        text-decoration: none;
+        color: inherit;
 
-            &:hover {
-                text-decoration: underline;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
+}
+
+.like-button-container {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
 }
