@@ -1,11 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
-import "swiper/scss";
-import "swiper/scss/pagination";
-import "swiper/scss/navigation";
-
-import styled from "@emotion/styled";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
 import Tennsi1 from "../../assets/images/Tennis1.jpg";
 import Tennsi2 from "../../assets/images/Tennis2.jpg";
 import Tennsi3 from "../../assets/images/Tennis3.jpg";
@@ -16,17 +15,6 @@ import Basketball1 from "../../assets/images/Basketball1.jpg";
 import Basketball2 from "../../assets/images/Basketball2.jpg";
 import Basketball3 from "../../assets/images/Basketball3.jpg";
 import "./Slider.scss";
-
-const StyledSlide = styled(SwiperSlide)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 100%;
-`;
 
 const Slider: React.FC = () => {
     return (
@@ -46,31 +34,42 @@ const Slider: React.FC = () => {
                 prevEl: ".swiper-button-prev",
             }}
         >
-            <StyledSlide
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Tennsi1})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Football1})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Basketball1})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Tennsi2})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Football2})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Basketball2})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Tennsi3})` }}
-            ></StyledSlide>
-            <StyledSlide
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
                 style={{ backgroundImage: `url(${Football3})` }}
-            ></StyledSlide>
-            <StyledSlide style={{ backgroundImage: `url(${Basketball3})` }} />
+            ></SwiperSlide>
+            <SwiperSlide
+                className="styled-slide"
+                style={{ backgroundImage: `url(${Basketball3})` }}
+            ></SwiperSlide>
             <div className="swiper-button-next"></div>
             <div className="swiper-button-prev"></div>
         </Swiper>

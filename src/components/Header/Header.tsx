@@ -25,68 +25,72 @@ const Header: React.FC = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" className="app-bar">
                 <Toolbar className="toolbar">
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1 }}
-                        className="title"
-                    >
-                        Sport Blog
-                    </Typography>
-                    <Button
-                        component={RouterLink}
-                        to="/"
-                        color="inherit"
-                        className="button"
-                    >
-                        Home
-                    </Button>
-                    <Button
-                        color="inherit"
-                        onClick={handleClick}
-                        className="button"
-                    >
-                        Categories
-                    </Button>
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                        className="menu"
-                    >
-                        <MenuItem
-                            component={RouterLink}
-                            to="/categories/Football"
-                            onClick={handleClose}
-                            className="menu__item"
+                    <RouterLink to="/" style={{ textDecoration: "none" }}>
+                        <Typography
+                            variant="h6"
+                            component="div"
+                            sx={{ flexGrow: 1 }}
+                            className="title"
                         >
-                            Football
-                        </MenuItem>
-                        <MenuItem
+                            Sport Blog
+                        </Typography>
+                    </RouterLink>
+                    <div>
+                        <Button
                             component={RouterLink}
-                            to="/categories/Basketball"
-                            onClick={handleClose}
-                            className="menu__item"
+                            to="/"
+                            color="inherit"
+                            className="button"
                         >
-                            Basketball
-                        </MenuItem>
-                        <MenuItem
+                            Home
+                        </Button>
+                        <Button
+                            color="inherit"
+                            onClick={handleClick}
+                            className="button"
+                        >
+                            Categories
+                        </Button>
+                        <Menu
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                            className="menu"
+                        >
+                            <MenuItem
+                                component={RouterLink}
+                                to="/categories/Football"
+                                onClick={handleClose}
+                                className="menu__item"
+                            >
+                                Football
+                            </MenuItem>
+                            <MenuItem
+                                component={RouterLink}
+                                to="/categories/Basketball"
+                                onClick={handleClose}
+                                className="menu__item"
+                            >
+                                Basketball
+                            </MenuItem>
+                            <MenuItem
+                                component={RouterLink}
+                                to="/categories/Tennis"
+                                onClick={handleClose}
+                                className="menu__item"
+                            >
+                                Tennis
+                            </MenuItem>
+                        </Menu>
+                        <Button
                             component={RouterLink}
-                            to="/categories/Tennis"
-                            onClick={handleClose}
-                            className="menu__item"
+                            to="/liked-articles"
+                            color="inherit"
+                            className="button"
                         >
-                            Tennis
-                        </MenuItem>
-                    </Menu>
-                    <Button
-                        component={RouterLink}
-                        to="/liked-articles"
-                        color="inherit"
-                        className="button"
-                    >
-                        Liked Articles
-                    </Button>
+                            Liked Articles
+                        </Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         </Box>

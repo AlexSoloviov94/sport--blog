@@ -9,23 +9,6 @@ body {
     font-family: $font-family;
 }
 
-.home-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    // .slider-container {
-    //     height: 500px; // Высота, которую вы хотите установить для слайдера
-    //     display: flex;
-    //     align-items: center;
-    // }
-
-    .article-list-container {
-        width: 100%;
-        max-width: 1200px;
-    }
-}
-
 // Анимация для элементов списка статей
 .article-card {
     opacity: 0;
